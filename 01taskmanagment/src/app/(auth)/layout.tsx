@@ -10,7 +10,7 @@ export default function AuthLayout({children}: AuthLayoutProps) {
     <div className="bg-neutral-100 min-h-screen">
       <div className="mx-auto max-w-screen-2xl p-4">
         <nav className="flex items-center justify-between">
-            <Image src="/logo.svg" alt="logo" width={70} height={50} />
+            <Image src="/logo.svg" alt="logo" width={150} height={100} />
               <Button variant='secondary'>
                 Sign Up
               </Button>
