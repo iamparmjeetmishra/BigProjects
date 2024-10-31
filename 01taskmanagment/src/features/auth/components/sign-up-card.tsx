@@ -100,13 +100,26 @@ function SignUpForm() {
 			<form
 				onSubmit={form.handleSubmit(HandleSubmit)}
 				className="space-y-4"
-			>
+      >
+        <FormField
+					control={form.control}
+					name="name"
+					render={({ field }) => (
+						<FormItem>
+							<FormLabel>Your Name</FormLabel>
+							<FormControl>
+								<Input placeholder="Add your name" {...field} />
+							</FormControl>
+							<FormMessage />
+						</FormItem>
+					)}
+				/>
 				<FormField
 					control={form.control}
 					name="email"
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel>Email</FormLabel>
+							<FormLabel>Your Email</FormLabel>
 							<FormControl>
 								<Input placeholder="Add your email" {...field} />
 							</FormControl>
@@ -119,7 +132,7 @@ function SignUpForm() {
 					name="password"
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel>Password</FormLabel>
+							<FormLabel>Your Password</FormLabel>
 							<FormControl>
 								<Input
 									type="password"
