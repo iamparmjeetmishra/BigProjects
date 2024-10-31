@@ -13,7 +13,7 @@ import {
 	FormField,
 	FormItem,
 	FormLabel,
-  FormMessage,
+	FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import {
@@ -35,6 +35,27 @@ export default function SignInCard() {
 			<CardContent className="p-8">
 				<SignInForm />
 			</CardContent>
+			<div className="px-8">
+				<DottedSeparator />
+			</div>
+			<CardContent className="p-8 space-y-4">
+				<Button
+					disabled={false}
+					variant="secondary"
+					size="lg"
+					className="w-full"
+				>
+					Login with Google
+        </Button>
+        <Button
+					disabled={false}
+					variant="secondary"
+					size="lg"
+					className="w-full"
+				>
+					Login with Github
+				</Button>
+			</CardContent>
 		</Card>
 	);
 }
@@ -54,7 +75,10 @@ function SignInForm() {
 
 	return (
 		<Form {...form}>
-			<form onSubmit={form.handleSubmit(HandleSubmit)} className="space-y-2">
+			<form
+				onSubmit={form.handleSubmit(HandleSubmit)}
+				className="space-y-4"
+			>
 				<FormField
 					control={form.control}
 					name="email"
@@ -63,8 +87,8 @@ function SignInForm() {
 							<FormLabel>Email</FormLabel>
 							<FormControl>
 								<Input placeholder="Add your email" {...field} />
-              </FormControl>
-              <FormMessage />
+							</FormControl>
+							<FormMessage />
 						</FormItem>
 					)}
 				/>
@@ -75,13 +99,19 @@ function SignInForm() {
 						<FormItem>
 							<FormLabel>Password</FormLabel>
 							<FormControl>
-								<Input type="password" placeholder="Add your Password" {...field} />
-              </FormControl>
-              <FormMessage />
+								<Input
+									type="password"
+									placeholder="Add your Password"
+									{...field}
+								/>
+							</FormControl>
+							<FormMessage />
 						</FormItem>
 					)}
-        />
-        <Button type="submit">Sign In</Button>
+				/>
+				<Button type="submit" size="lg" className="w-full">
+					Sign In
+				</Button>
 			</form>
 		</Form>
 	);
