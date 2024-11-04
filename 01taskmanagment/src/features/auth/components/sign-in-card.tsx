@@ -24,6 +24,7 @@ import {
 } from "@/schema/auth-schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import Link from "next/link";
 
 export default function SignInCard() {
 	return (
@@ -59,6 +60,19 @@ export default function SignInCard() {
           <FaGithub className="mr-2 size-5" />
 					Login with Github
 				</Button>
+			</CardContent>
+			{/* <div className="px-8">
+				<DottedSeparator />
+			</div> */}
+			<CardContent className="text-center">
+				<p>
+					Don&apos;t have an account?{" "}
+					<Link href="/sign-up">
+						<span className="text-blue-700">
+							Sign up
+						</span>
+					</Link>
+				</p>
 			</CardContent>
 		</Card>
 	);
