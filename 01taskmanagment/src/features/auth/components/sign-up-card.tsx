@@ -42,7 +42,7 @@ export default function SignUpCard() {
 						</span>
           </Link>
           {" "}and {" "}
-          <Link href="/terms">
+          <Link href="/terms-and-conditions">
 						<span className="underline text-blue-700">
 							Terms of Service
 						</span>
