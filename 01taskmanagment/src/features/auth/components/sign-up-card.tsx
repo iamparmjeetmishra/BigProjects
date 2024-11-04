@@ -78,6 +78,16 @@ export default function SignUpCard() {
 					Signup with Github
 				</Button>
 			</CardContent>
+			<CardContent className="text-center">
+				<p>
+					Already have an account?{" "}
+					<Link href="/sign-in">
+						<span className="text-blue-700">
+							Sign in
+						</span>
+					</Link>
+				</p>
+			</CardContent>
 		</Card>
 	);
 }
