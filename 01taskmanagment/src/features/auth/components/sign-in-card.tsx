@@ -25,6 +25,7 @@ import {
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import Link from "next/link";
+import { useLogin } from "../api/use-login";
 
 export default function SignInCard() {
 	return (
@@ -79,6 +80,9 @@ export default function SignInCard() {
 }
 
 function SignInForm() {
+
+	const {mutate} = useLogin()
+
 	const form = useForm<SignInInferSchema>({
 		resolver: zodResolver(SignInSchema),
 		defaultValues: {
@@ -89,6 +93,7 @@ function SignInForm() {
 
 	function HandleSubmit(data: SignInInferSchema) {
 		console.log(data);
+		mutate({json: data})
 	}
 
 	return (
