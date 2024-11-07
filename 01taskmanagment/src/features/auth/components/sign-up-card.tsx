@@ -28,6 +28,7 @@ import {
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import Link from "next/link";
+import { useRegister } from "../api/use-register";
 
 export default function SignUpCard() {
 	return (
@@ -93,6 +94,7 @@ export default function SignUpCard() {
 }
 
 function SignUpForm() {
+	const {mutate} = useRegister()
 	const form = useForm<SignUpInferSchema>({
 		resolver: zodResolver(SignUpSchema),
 		defaultValues: {
@@ -103,6 +105,7 @@ function SignUpForm() {
 
 	function HandleSubmit(data: SignUpInferSchema) {
 		console.log(data);
+		mutate({json: data})
 	}
 
 	return (
