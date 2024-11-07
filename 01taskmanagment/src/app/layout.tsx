@@ -7,6 +7,7 @@ const poppins = Poppins({ subsets: ["latin"], display: 'swap', weight: ["100", "
 
 
 import "./globals.css";
+import { QueryProvider } from "@/components/query-provider";
 
 
 
@@ -30,7 +31,9 @@ export default function RootLayout({
       <body
         className={`${inter.className} ${poppins.className} h-screen w-screen antialiased`}
       >
+        <QueryProvider>
         {children}
+        </QueryProvider>
       </body>
     </html>
   );
