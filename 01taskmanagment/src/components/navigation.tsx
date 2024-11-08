@@ -1,6 +1,8 @@
 import { cn } from "@/lib/utils";
 import { SettingsIcon, UserIcon } from "lucide-react";
+import { Route } from "next";
 import Link from "next/link";
+
 import {
 	GoCheckCircle,
 	GoCheckCircleFill,
@@ -8,28 +10,35 @@ import {
 	GoHomeFill,
 } from "react-icons/go";
 
-const routes = [
+interface RoutesProps  {
+  label: string;
+  href: string| Route;
+  icon: React.ElementType;
+  activeIcon: React.ElementType
+}
+
+const routes: RoutesProps[] = [
 	{
 		label: "Home",
-		href: "",
+		href: "/" as string,
 		icon: GoHome,
 		activeIcon: GoHomeFill,
 	},
 	{
 		label: "My Tasks",
-		href: "/tasks",
+		href: "/tasks" as string,
 		icon: GoCheckCircle,
 		activeIcon: GoCheckCircleFill,
 	},
 	{
 		label: "Settings",
-		href: "/settings",
+		href: "/settings" as string,
 		icon: SettingsIcon,
 		activeIcon: SettingsIcon,
 	},
 	{
 		label: "Members",
-		href: "/members",
+		href: "/members" as string,
 		icon: UserIcon,
 		activeIcon: UserIcon,
 	},
@@ -43,7 +52,7 @@ export default function Navigation() {
 				const Icon = isActive ? item.activeIcon : item.icon;
 
 				return (
-					<Link key={item.href} href={item.href}>
+					<Link key={item.href.toString()} href={item.href as Route}>
 						<div
 							className={cn(
 								"flex items-center gap-2.5 p-2.5 rounded-md font-medium hover:text-primary transition text-neutral-500",
