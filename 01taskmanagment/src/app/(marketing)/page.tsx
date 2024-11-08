@@ -1,8 +1,7 @@
 "use client"
-
-import { Button } from "@/components/ui/button";
 import { useCurrentUser } from "@/features/auth/api/use-current";
 import { useLogout } from "@/features/auth/api/use-logout";
+import { UserButton } from "@/features/auth/components/user-button";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
@@ -20,6 +19,6 @@ export default function HomePage() {
 
   return <div>
     <p>Only Visible to authorized user.</p>
-    <Button onClick={() => mutate()}>Logout</Button>
+    <UserButton />
   </div>;
 }
