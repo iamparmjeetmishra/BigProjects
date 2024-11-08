@@ -14,8 +14,8 @@ export default function DottedSeparator(
   {
     className ,
     color = "#d4d4d8",
-    height = "2px",
-    dotsize = "2px",
+    height = "4px",
+    dotsize = "4px",
     gapSize = "2px",
     direction = "horizontal"
   }: DottedSeparatorProps) { 

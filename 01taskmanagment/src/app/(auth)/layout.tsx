@@ -1,6 +1,6 @@
 'use client'
+import Logo from "@/components/logo"
 import { Button } from "@/components/ui/button"
-import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 
@@ -14,7 +14,7 @@ export default function AuthLayout({ children }: AuthLayoutProps) {
     <div className="bg-neutral-100 min-h-screen">
       <div className="mx-auto max-w-screen-2xl p-4">
         <nav className="flex items-center justify-between">
-            <Image src="/logo.svg" alt="logo" width={150} height={100} />
+            <Logo />
           <Button asChild variant='secondary'>
             
               <Link href={pathname === '/sign-up' ? '/sign-in' : '/sign-up'}>
