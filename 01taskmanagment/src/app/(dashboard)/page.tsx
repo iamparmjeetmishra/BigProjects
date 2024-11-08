@@ -1,5 +1,4 @@
 import { getCurrentUser } from "@/features/auth/actions";
-import { UserButton } from "@/features/auth/components/user-button";
 import { redirect } from "next/navigation";
 
 export default async function HomePage() {
@@ -10,8 +9,7 @@ export default async function HomePage() {
 
 	return (
 		<div>
-			<p>Only Visible to authorized user.</p>
-			<UserButton />
+			<p>This is a Home page.</p>
 		</div>
 	);
 }
