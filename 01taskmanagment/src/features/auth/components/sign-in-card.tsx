@@ -21,7 +21,7 @@ import { Input } from "@/components/ui/input";
 import {
 	SignInInferSchema,
 	SignInSchema,
-} from "@/schema/auth-schema";
+} from "@/features/auth/auth-schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import Link from "next/link";

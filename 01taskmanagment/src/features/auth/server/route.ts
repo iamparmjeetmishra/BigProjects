@@ -1,6 +1,6 @@
 import { Hono } from "hono";
 import { zValidator } from "@hono/zod-validator";
-import { SignInSchema, SignUpSchema } from "@/schema/auth-schema";
+import { SignInSchema, SignUpSchema } from "@/features/auth/auth-schema";
 import { createAdminClient } from "@/lib/appwrite";
 import { ID } from "node-appwrite";
 import { deleteCookie, setCookie } from "hono/cookie";
