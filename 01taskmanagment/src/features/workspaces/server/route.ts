@@ -20,7 +20,8 @@ const app = new Hono()
         WORKSPACES_ID,
         ID.unique(),
         {
-          name
+          name,
+          userId: user.$id
         }
       )
       return c.json({data: workspace})
