@@ -8,6 +8,7 @@ const poppins = Poppins({ subsets: ["latin"], display: 'swap', weight: ["100", "
 
 import "./globals.css";
 import { QueryProvider } from "@/components/query-provider";
+import { Toaster } from "@/components/ui/sonner";
 
 
 
@@ -32,7 +33,8 @@ export default function RootLayout({
         className={`${inter.className} ${poppins.className} h-screen w-screen antialiased`}
       >
         <QueryProvider>
-        {children}
+          {children}
+          <Toaster position="top-right" />
         </QueryProvider>
       </body>
     </html>
