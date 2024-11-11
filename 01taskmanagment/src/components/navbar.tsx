@@ -9,8 +9,8 @@ export default function Navbar() {
         <h1 className='text-2xl font-semibold'>Home</h1>
         <p className='text-muted-foreground'>Monitor all of your projects</p>
       </div>
-      <MobileSidbar />
       <UserButton />
+      <MobileSidbar />
     </nav>
   )
 }
