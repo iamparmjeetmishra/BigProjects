@@ -6,7 +6,8 @@ export default async function HomePage() {
 
   const user = await getCurrentUser()
 
-  if(!user) redirect("/sign-in")
+	// Please enabled after testing
+  // if(!user) redirect("/sign-in")
 
 	return (
 		<div className="bg-neutral-200 p-4 h-full rounded-xl">
