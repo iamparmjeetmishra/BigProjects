@@ -27,17 +27,25 @@ export default function WorkspaceSwithcer() {
 					<SelectValue placeholder="No workspace selected" />
 				</SelectTrigger>
 				<SelectContent>
-					{workspaces?.data.documents?.map((workspace) => (
-						<SelectItem key={workspace.$id} value={workspace.$id}>
-							<div className="flex justify-start items-center gap-3 font-medium">
-								<WorkspaceAvatar
-									name={workspace.name}
-									image={workspace.imageUrl}
-								/>
-								<span className="truncate">{workspace.name}</span>
-							</div>
+					{workspaces?.data.total === 0 ? (
+						<SelectItem value="no-workspaces">
+							<span className="text-neutral-500">
+								No workspaces found
+							</span>
 						</SelectItem>
-					))}
+					) : (
+						workspaces?.data.documents?.map((workspace) => (
+							<SelectItem key={workspace.$id} value={workspace.$id}>
+								<div className="flex justify-start items-center gap-3 font-medium">
+									<WorkspaceAvatar
+										name={workspace.name}
+										image={workspace.imageUrl}
+									/>
+									<span className="truncate">{workspace.name}</span>
+								</div>
+							</SelectItem>
+						))
+					)}
 				</SelectContent>
 			</Select>
 		</div>
